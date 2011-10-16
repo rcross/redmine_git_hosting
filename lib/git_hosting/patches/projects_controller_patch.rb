@@ -37,6 +37,9 @@ module GitHosting
 			end
 
 			def update_git_repo_for_new_parent
+				# this is basically unneeded if not moving repos to sub directories
+				# but using the configurable flag, it just means the old location will equal the new location
+				# it might still be best to use a check to disable running this function completely if the flag is set.
 				if @project.repository != nil
 					if @project.repository.is_a?(Repository::Git)
 						old_parent_id = @project.parent ? @project.parent.id : nil

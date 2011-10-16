@@ -11,6 +11,11 @@
 		<br />
 	</p>
 	<p>
+		<label><%= l(:label_git_repositories_use_parent_path)%></label>
+		<%= select_tag("settings[gitRepositoriesUseParentPath]", options_for_select([[l(:label_enabled), 'true'], [l(:label_disabled), 'false']], @settings['gitRepositoriesUseParentPath'])) %>
+		<br />
+	</p>
+	<p>
 		<label><%= l(:label_git_show_urls)%></label>
 		<%= select_tag("settings[gitRepositoriesShowUrl]", options_for_select([[l(:label_enabled), 'true'], [l(:label_disabled), 'false']], @settings['gitRepositoriesShowUrl'])) %>
 		<br />
