@@ -138,7 +138,7 @@ module GitHosting
 	def self.add_route_for_project_with_map(p,m)
 		repo = p.repository
 		if repo.is_a?(Repository::Git)
-			repo_name= p.parent ? File.join(GitHosting::get_full_parent_path(p, true),p.identifier) : p.identifier
+			repo_name = GitHosting::repository_name(p)
 			repo_path = repo_name + ".git"
 			m.connect repo_path,                  :controller => 'git_http', :p1 => '', :p2 =>'', :p3 =>'', :id=>"#{p[:identifier]}", :path=>"#{repo_path}"
 			m.connect repo_path,                  :controller => 'git_http', :p1 => '', :p2 =>'', :p3 =>'', :id=>"#{p[:identifier]}", :path=>"#{repo_path}"
