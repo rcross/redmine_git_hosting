@@ -106,7 +106,7 @@ module GitHosting
 
 	def self.get_full_parent_path(project, is_file_path)
 		parent_parts = [];
-		if Setting.plugin_redmine_git_hosting['gitRepositoriesUseParentPath'] == "true" 
+		if Setting.plugin_redmine_git_hosting['gitRepositoriesUseParentPath'] == 'true' 
 			p = project
 			while p.parent
 				parent_id = p.parent.identifier.to_s
@@ -114,7 +114,6 @@ module GitHosting
 				p = p.parent
 			end
 		end
-		Setting.plugin_redmine_git_hosting['gitRepositoriesUseParentPath'] ? parent_parts = [] ;
 		return is_file_path ? File.join(parent_parts) : parent_parts.join("/")
 	end
 
