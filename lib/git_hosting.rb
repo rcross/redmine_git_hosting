@@ -114,6 +114,7 @@ module GitHosting
 				p = p.parent
 			end
 		end
+		Setting.plugin_redmine_git_hosting['gitRepositoriesUseParentPath'] ? parent_parts = [] ;
 		return is_file_path ? File.join(parent_parts) : parent_parts.join("/")
 	end
 
