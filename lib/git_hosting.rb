@@ -118,7 +118,7 @@ module GitHosting
 	end
 
 	def self.repository_name project
-		return "#{get_full_parent_path(project, false)}/#{project.identifier}".sub(/^\//, "")
+		return "#{get_full_parent_path(project, false)}/#{project.identifier}".sub(/^\/+/, "")
 	end
 
 	def self.repository_path project
